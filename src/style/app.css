@@ -182,6 +182,9 @@
   .absolute {
     position: absolute;
   }
+  .static {
+    position: static;
+  }
   .bottom-0 {
     bottom: 0px;
   }
@@ -190,6 +193,9 @@
   }
   .block {
     display: block;
+  }
+  .contents {
+    display: contents;
   }
   .flex {
     display: flex;
