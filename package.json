@@ -1,0 +1,23 @@
+{
+  "name": "dhbw-connect",
+  "version": "1.0.0",
+  "description": "Ein zentraler Ort für alle DHBW Apps",
+  "homepage": "https://github.com/Xefili/dhbw-connect#readme",
+  "bugs": {
+    "url": "https://github.com/Xefili/dhbw-connect/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xefili/dhbw-connect.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.3.3"
+  }
+}
