@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="DHBW Connect Startseite">
-
+    <link rel="shortcut icon" href="../assets/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="../style/app.css">
 
     <title>DHBW-Connect</title>
@@ -13,7 +13,7 @@
     <header class="w-full">
         <nav class="w-full grid grid-cols-2 bg-mist-200 dark:bg-mist-600 p-4">
             <div class="flex flex-row justify-start items-center gap-4">
-                <img src="" alt="Logo">
+                <img src="../assets/logo.svg" alt="Logo" class="h-4 w-4">
                 <span class="">DHBW-Connect</span>
             </div>
 
@@ -36,13 +36,14 @@
             </section>
         </div>
 
-        <div class="flex mb-12 w-full"><a href="#moodleSkip" class="focus:w-fit focus:h-fit opacity-0 focus:opacity-100">Studenplan überspringen?</a></div>
+        <div class="flex mb-12 w-full"><a href="#moodleSkip" class="opacity-0 focus:opacity-100">Studenplan überspringen?</a></div>
 
-        <div>
+        <div id="planSkip">
             <h2>Stundenplan</h2>
             <iframe src="https://dhbw.app/c/KA-TINF25B3" frameborder="0" class="w-full min-h-250 mt-8 rounded-xl"></iframe>
         </div>
 
+        <a href="#planSkip" class="opacity-0 focus:opacity-100 inline-block m-2">Studenplan überspringen?</a>
 
         <div id="moodleSkip">
             <h2>Moodle</h2>
