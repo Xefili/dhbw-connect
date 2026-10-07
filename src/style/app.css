@@ -1,5 +1,4 @@
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
-@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -179,9 +178,6 @@
   }
 }
 @layer utilities {
-  .absolute {
-    position: absolute;
-  }
   .static {
     position: static;
   }
@@ -203,32 +199,14 @@
   .grid {
     display: grid;
   }
-  .table {
-    display: table;
-  }
   .h-12 {
     height: calc(var(--spacing) * 12);
-  }
-  .min-h-2 {
-    min-height: calc(var(--spacing) * 2);
-  }
-  .min-h-25 {
-    min-height: calc(var(--spacing) * 25);
   }
   .min-h-250 {
     min-height: calc(var(--spacing) * 250);
   }
-  .min-h-\[1000px\] {
-    min-height: 1000px;
-  }
   .w-full {
     width: 100%;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -260,13 +238,6 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-  .bg-emerald-50 {
-    background-color: var(--color-emerald-50);
-  }
   .bg-mist-50 {
     background-color: var(--color-mist-50);
   }
@@ -285,22 +256,12 @@
   .text-mist-900 {
     color: var(--color-mist-900);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
   @media (width >= 64rem) {
     .lg\:w-1\/3 {
       width: calc(1 / 3 * 100%);
     }
   }
   @media (prefers-color-scheme: dark) {
-    .dark\:bg-emerald-950 {
-      background-color: var(--color-emerald-950);
-    }
     .dark\:bg-mist-600 {
       background-color: var(--color-mist-600);
     }
@@ -326,22 +287,8 @@
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
-      --tw-outline-style: solid;
-    }
+  a {
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
   }
 }

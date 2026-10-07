@@ -11,4 +11,7 @@
     h3 {
         @apply text-xl;
     }
+    a {
+        @apply underline underline-offset-4;
+    }
 }
