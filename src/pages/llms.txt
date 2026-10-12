@@ -1,0 +1,4 @@
+DHBW-Connect
+Eine Webseite im Ramen des Kurses Web-Engineering der DHBW Karlsruhe.
+Autor: Henry Shütterle, Maurice Wollnik
+Kontakt: student@dhbw-connect.de
