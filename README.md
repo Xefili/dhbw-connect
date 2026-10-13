@@ -1,11 +1,38 @@
-# Readme
-- **StudyHub** (Organisation von Kursen, Aufgaben, Lernmaterialien und Prüfungsterminen) 
-  Die Idee wurde ausgewählt, weil sie für uns aktuell Hilfreich erscheint -> Wurde zu DHBW-Connect umbenannt mit leicht anderen Features
-- **WG Manager** (Web-App für WGs zur Verwaltung von Aufgaben, Einkäufen und gemeinsamen Ausgaben)
-   Die Idee wurde ausgeschlossen, weil die Anwendung zwar verschiedene Verwaltungsfunktionen wie Aufgaben, Einkäufe und Ausgaben bietet, jedoch keinen direkten Bezug zum Studienalltag an der DHBW hat.
-- **CampusQuest:** (Gamifizierte Plattform, auf der Studenten Challenges absolvieren und Punkte sammeln)
-  Die Idee wurde ausgeschlossen, weil das Gamification-Konzept einen relativ hohen zusätzlichen Aufwand für ein Punkt-, Level- und Belohnungssystem verursacht.
-- **Leftover:** (Rezept-App, die aus vorhandenen Lebensmitteln passende Gerichte vorschlägt)
-  Die Idee wurde ausgeschlossen, weil ein wesentlicher Teil der Anwendung von einer externen Rezept-API abhängig wäre und dadurch weniger eigene Backend-Funktionalität entstehen würde.
-- **CampusRide:** (Plattform zum Organisieren von Mitfahrgelegenheiten zwischen Studenten)
-  Die Idee wurde ausgeschlossen, weil eine zuverlässige Fahrten- und Standortverwaltung das Projekt technisch deutlich komplexer machen würde.
+# dhbw-connect-vite
+
+This template should help get you started developing with Vue 3 in Vite.
+
+## Recommended IDE Setup
+
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+
+## Recommended Browser Setup
+
+- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+- Firefox:
+  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
