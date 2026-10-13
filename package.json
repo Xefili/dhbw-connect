@@ -15,7 +15,7 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx @tailwindcss/cli -i src/style/input.css -o src/style/app.css --watch"
   },
   "dependencies": {
     "tailwindcss": "^4.3.3"
