@@ -1,4 +1,38 @@
 DHBW-Connect
-Eine Webseite im Ramen des Kurses Web-Engineering der DHBW Karlsruhe.
-Autor: Henry Shütterle, Maurice Wollnik
-Kontakt: student@dhbw-connect.de
+Eine Webseite im Rahmen des Kurses Web-Engineering der DHBW Karlsruhe.
+
+Projektbeschreibung:
+DHBW-Connect ist ein zentraler Einstiegspunkt für Studierende der DHBW Karlsruhe, der verschiedene digitale Hilfsmittel und Ideen rund um den Studienalltag an einem Ort zusammenführt. Die Plattform soll als Startseite für nützliche DHBW-bezogene Anwendungen dienen und dabei den Fokus auf Organisation, Lernmanagement und studentische Alltagshilfe legen.
+
+Ziel des Projekts:
+- zentrale Übersicht über DHBW-relevante Tools und Services
+- Unterstützung bei Organisation von Kursen, Aufgaben und Lernmaterialien
+- einfache, übersichtliche Weboberfläche mit Fokus auf Nutzbarkeit
+- Entwicklung einer studentischen Web-App im Rahmen eines Praxisprojekts
+
+Inhaltliche Richtung:
+Die ursprüngliche Idee war ein "StudyHub"-ähnliches Konzept mit Funktionen zur Organisation von Kursen, Aufgaben, Lernmaterialien und Prüfungsterminen. Dieses Konzept wurde als Grundlage für DHBW-Connect weiterentwickelt und leicht angepasst, damit es stärker auf die Bedürfnisse der DHBW-Studierenden passt.
+
+Andere Ideen, die im Projektprozess evaluiert wurden, umfassen:
+- WG Manager: Verwaltung von Aufgaben, Einkäufen und Ausgaben in Wohnprojekten
+- CampusQuest: gamifizierte Lernplattform mit Challenges und Punkten
+- Leftover: Rezept-App auf Basis vorhandener Lebensmittel
+- CampusRide: Mitfahrgelegenheiten zwischen Studierenden
+
+Diese Varianten wurden teilweise verworfen, weil sie entweder keinen direkten Bezug zum Studienalltag haben oder technisch zu aufwendig für das Projektrahmenkonzept sind.
+
+Technischer Kontext:
+- Frontend: HTML, CSS, JavaScript
+- Styling: Tailwind CSS
+- Projektstruktur: statische Web-Projektseite mit Fokus auf einfache Darstellung und schnelles Prototyping
+- Einsatz: Lehrprojekt / Studienprojekt an der DHBW Karlsruhe
+
+Autoren:
+- Henry Shütterle
+- Maurice Wollnik
+
+Kontakt:
+student@dhbw-connect.de
+
+Hinweis:
+Das Projekt ist als Konzept- und Lernprojekt angelegt und dient als zentraler Webauftritt für die Idee hinter DHBW-Connect sowie für die begleitende Projektarbeit im Kurs Web-Engineering.
