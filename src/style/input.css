@@ -1,6 +1,29 @@
 @import "tailwindcss";
 
 
+
+@theme {
+    --color-background-d: oklch(27.5% 0.011 216.9);
+    --color-background-l: oklch(96.3% 0.002 197.1);
+
+    --color-surface-d: oklch(27.7% 0.046 192.524);
+    --color-surface-l: oklch(95.6% 0.045 203.388);
+
+    --color-s-surface-d: oklch(51.1% 0.096 186.391);
+    --color-s-surface-l: oklch(91% 0.096 180.426);
+
+    --color-text-bg-d: oklch(96.3% 0.002 197.1);
+    --color-text-bg-l: oklch(27.5% 0.011 216.9);
+
+    --color-text-s-d: oklch(95.6% 0.045 203.388);
+    --color-text-s-l: oklch(27.7% 0.046 192.524);
+
+    --color-text-ss-d: oklch(91% 0.096 180.426);
+    --color-text-ss-l: oklch(27.7% 0.046 192.524);
+}
+
+
+
 @layer utilities {
     h1 {
         @apply text-3xl;
