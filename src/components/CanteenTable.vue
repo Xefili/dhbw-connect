@@ -5,7 +5,7 @@ import { ref, onMounted } from 'vue'
 const canteen = ref(null)
 
 async function fetchDhbwTodayMenu() {
-  const ENDPOINT = 'https://api.mensa-ka.demensa-api/' // Oder deine Proxy-URL
+  const ENDPOINT = 'https://api.mensa-ka.de/' // Oder deine Proxy-URL
   const today = new Date().toISOString().split('T')[0]
 
   const query = `
