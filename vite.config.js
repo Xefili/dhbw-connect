@@ -20,14 +20,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  server: {
-    proxy: {
-      // Any request starting with /mensa-api will be redirected by Vite
-      '/mensa-api': {
-        target: 'https://api.mensa-ka.de',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/mensa-api/, ''),
-      },
-    },
-  }
 })
