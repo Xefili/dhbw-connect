@@ -5,44 +5,13 @@ import { ref, onMounted } from 'vue'
 const canteen = ref(null)
 
 async function fetchDhbwTodayMenu() {
-  const ENDPOINT = 'https://api.mensa-ka.de/' // Oder deine Proxy-URL
-  const today = new Date().toISOString().split('T')[0]
-
-  const query = `
-    query GetDhbwFood($canteenId: ID!, $date: NaiveDate!) {
-      getCanteen(canteenId: $canteenId) {
-        name
-        lines {
-          name
-          meals(date: $date) {
-            name
-            price {
-              student
-            }
-          }
-        }
-      }
-    }
-  `
-
-  const variables = {
-    canteenId: "0a53351a-62f8-4ac4-a860-099817e5cf91",
-    date: today
-  }
-
   try {
-    const response = await fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query, variables })
-    })
-
-    const { data } = await response.json()
-    
-    // 2. Weise die Daten der .value-Eigenschaft von ref zu
-    if (data?.getCanteen) {
-      canteen.value = data.getCanteen
+    const response = await fetch('https://foodapi.xefili.app/')
+    if (!response.ok) {
+      throw new Error(`Menu API returned HTTP ${response.status}`)
     }
+
+    canteen.value = await response.json()
   } catch (err) {
     console.error('Fehler beim Laden der Speisekarte:', err)
   }
@@ -60,7 +29,7 @@ onMounted(() => {
 
     <table class="w-full text-left border-collapse">
       <caption>
-        Mensaria Erzbergerstraße
+        Mensa Erzbergerstraße
       </caption>
 
       <thead class="bg-s-surface-l dark:bg-s-surface-d">
@@ -89,7 +58,7 @@ onMounted(() => {
               <td>{{ meal.name }}</td>
               
               <td class="price-col">
-                {{ meal.price?.student ? (meal.price.student / 100).toFixed(2) + ' €' : 'Inklusiv' }}
+                {{ meal.price || 'Inklusiv' }}
               </td>
             </tr>
           </template>

@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "api:start": "node main.js"
   },
   "dependencies": {
+    "ka-mensa-fetch": "^5.0.1",
     "vue": "^3.5.42",
     "vue-router": "^5.3.1"
   },
