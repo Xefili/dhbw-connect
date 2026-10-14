@@ -9,11 +9,17 @@ const router = createRouter({
       name: "Home",
       path: '/',
       component: Home,
+      meta: {
+        footerEnabled: true
+      }
     },
     {
       name: "Impressum",
       path: "/legal",
-      component: Impressum
+      component: Impressum,
+      meta: {
+        footerEnabled: false
+      }
     }
   ],
 })

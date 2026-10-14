@@ -3,23 +3,29 @@
 
 
 @theme {
-    --color-background-d: oklch(27.5% 0.011 216.9);
-    --color-background-l: oklch(96.3% 0.002 197.1);
+    /* Backgrounds */
+    --color-background-d: oklch(20% 0.012 215);
+    --color-background-l: oklch(97% 0.003 200);
 
-    --color-surface-d: oklch(27.7% 0.046 192.524);
-    --color-surface-l: oklch(95.6% 0.045 203.388);
+    /* Surfaces (Cards, Modals) */
+    --color-surface-d: oklch(25% 0.035 195);
+    --color-surface-l: oklch(100% 0 0);
 
-    --color-s-surface-d: oklch(51.1% 0.096 186.391);
-    --color-s-surface-l: oklch(91% 0.096 180.426);
+    /* Secondary Surfaces / Elevated Elements */
+    --color-s-surface-d: oklch(32% 0.050 195);
+    --color-s-surface-l: oklch(93% 0.015 200);
 
-    --color-text-bg-d: oklch(96.3% 0.002 197.1);
-    --color-text-bg-l: oklch(27.5% 0.011 216.9);
+    /* Text on Background */
+    --color-text-bg-d: oklch(95% 0.005 200);
+    --color-text-bg-l: oklch(20% 0.012 215);
 
-    --color-text-s-d: oklch(95.6% 0.045 203.388);
-    --color-text-s-l: oklch(27.7% 0.046 192.524);
+    /* Text on Surface */
+    --color-text-s-d: oklch(92% 0.010 195);
+    --color-text-s-l: oklch(25% 0.035 195);
 
-    --color-text-ss-d: oklch(91% 0.096 180.426);
-    --color-text-ss-l: oklch(27.7% 0.046 192.524);
+    /* Text on Secondary Surface / Accents */
+    --color-text-ss-d: oklch(85% 0.020 195);
+    --color-text-ss-l: oklch(35% 0.040 195);
 }
 
 
@@ -36,5 +42,11 @@
     }
     a {
         @apply underline underline-offset-4;
+    }
+    .card {
+        @apply bg-surface-l dark:bg-surface-d text-text-s-l dark:text-text-s-d p-4 rounded-xl;
+    }
+    .card-floating {
+        @apply bg-s-surface-l dark:bg-s-surface-d text-text-ss-l dark:text-text-ss-d p-4 rounded-lg;
     }
 }
