@@ -16,9 +16,3 @@ const route = useRoute();
     </main>
   </div>
 </template>
-
-<style lang="css" scoped>
-#app {
-  background: linear-gradient(to bottom right, #1e3a8a, #581c87, #312e81, #1e40af);
-}
-</style>

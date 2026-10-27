@@ -3,7 +3,7 @@
 
 <template>
     <div class="w-full flex justify-center mt-8">
-        <main class="lg:w-1/2 bg-surface-l dark:bg-surface-d text-text-s-l dark:text-text-s-d p-4 rounded-2xl">
+        <main class="card">
             <div>
                 <h1>Impressum</h1>
 

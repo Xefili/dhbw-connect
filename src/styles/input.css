@@ -8,12 +8,12 @@
     --color-background-l: oklch(96.9% 0.016 293.756);
 
     /* Surfaces (Cards, Modals) */
-    --color-surface-d: oklch(93% 0.034 272.788);
-    --color-surface-l: oklch(93% 0.034 272.788);
+    --color-surface-d: oklch(25.3% 0.271 290.089);
+    --color-surface-l: oklch(90.4% 0.1 280.283);
 
     /* Secondary Surfaces / Elevated Elements */
-    --color-s-surface-d: oklch(18.3% 0.141 291.089);
-    --color-s-surface-l: oklch(89.4% 0.057 293.283);
+    --color-s-surface-d: oklch(25% 0.134 292.788);
+    --color-s-surface-l: oklch(88% 0.14 292.788);
 
     /* Text on Background */
     --color-text-bg-d: var(--color-background-l);
@@ -31,8 +31,8 @@
     --color-text-accent-d: var(--color-orange-400);
     --color-text-accent-l: var(--color-orange-700);
 
-    --color-border-d: white;
-    --color-border-l: black;
+    --color-border-d: oklch(55%, 0, 120);
+    --color-border-l: oklch(55%, 0, 0);
 }
 
 
@@ -53,21 +53,14 @@
     .card {
         @apply p-5 rounded-2xl transition-all duration-300;
         
-        @apply bg-white/10 backdrop-blur-md border border-white/40 text-text-s-l;
+        @apply bg-surface-l/50 dark:bg-surface-l/10 backdrop-blur-md border border-border-l/40 dark:border-border-d/40;
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-
-        &.dark, .dark & {
-        
-            background-color: oklch(from var(--color-surface-d) l c h / 35%) !important;
-            @apply backdrop-blur-xl text-text-s-d;
-            
-            border: 1px solid oklch(from var(--color-surface-d) l c h / 20%);
-            
-            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5), 
-                        0 10px 20px -10px rgba(0, 0, 0, 0.5);
-        }
     }
     .card-floating {
         @apply bg-s-surface-l dark:bg-s-surface-d text-text-ss-l dark:text-text-ss-d p-4 rounded-lg;
+    }
+
+    #app {
+        @apply bg-linear-120 dark:from-[#1e3a8a] dark:via-[#581c87] dark:to-[#1e3a8a] from-[#93c5fd] via-[#c084fc] to-[#93c5fd];
     }
 }
