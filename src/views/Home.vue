@@ -3,7 +3,7 @@ import CanteenTable from '@/components/CanteenTable.vue';
 
 </script>
 
-<template class="bg-background-l dark:bg-background-d text-text-bg-l dark:text-text-bg-d flex flex-col items-center">
+<template class="text-text-bg-l dark:text-text-bg-d flex flex-col items-center">
     <div class="flex w-full justify-center mt-8">
         <main class="w-full flex flex-col lg:grid gap-8 m-2 lg:m-0 lg:grid-cols-2">
             <div class="card">

@@ -8,7 +8,7 @@
     --color-background-l: oklch(96.9% 0.016 293.756);
 
     /* Surfaces (Cards, Modals) */
-    --color-surface-d: oklch(28.3% 0.141 291.089);
+    --color-surface-d: oklch(93% 0.034 272.788);
     --color-surface-l: oklch(93% 0.034 272.788);
 
     /* Secondary Surfaces / Elevated Elements */
@@ -51,7 +51,21 @@
         @apply underline underline-offset-4;
     }
     .card {
-        @apply bg-surface-l dark:bg-surface-d text-text-s-l dark:text-text-s-d p-4 rounded-xl;
+        @apply p-5 rounded-2xl transition-all duration-300;
+        
+        @apply bg-white/10 backdrop-blur-md border border-white/40 text-text-s-l;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+        &.dark, .dark & {
+        
+            background-color: oklch(from var(--color-surface-d) l c h / 35%) !important;
+            @apply backdrop-blur-xl text-text-s-d;
+            
+            border: 1px solid oklch(from var(--color-surface-d) l c h / 20%);
+            
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5), 
+                        0 10px 20px -10px rgba(0, 0, 0, 0.5);
+        }
     }
     .card-floating {
         @apply bg-s-surface-l dark:bg-s-surface-d text-text-ss-l dark:text-text-ss-d p-4 rounded-lg;
