@@ -58,10 +58,43 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
     }
     .card-floating {
-        @apply bg-s-surface-l dark:bg-s-surface-d text-text-ss-l dark:text-text-ss-d p-4 rounded-lg;
+        @apply p-5 rounded-2xl transition-all duration-300;
+        @apply bg-surface-l/50 dark:bg-surface-l/10 backdrop-blur-md border-0;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 
+                    0 8px 10px -6px rgba(0, 0, 0, 0.4) !important;
     }
 
-    #app {
+    body {
         @apply bg-linear-120 dark:from-[#1e3a8a] dark:via-[#581c87] dark:to-[#1e3a8a] from-[#93c5fd] via-[#c084fc] to-[#93c5fd];
+
+        @apply text-text-bg-l dark:text-text-bg-d;
+        
+    }
+
+    Header {
+        @apply sticky top-2 left-2 right-2;
+
+        @apply p-2 rounded-2xl transition-all duration-300;
+
+        @apply bg-surface-l/50 dark:bg-surface-l/10 backdrop-blur-md border-0;
+
+        border: 2px solid rgba(255, 255, 255, 0.2) !important;
+
+    }
+
+
+    footer {
+        @apply w-max flex flex-row items-center justify-center gap-2 mx-auto mt-12 mb-6 p-3 rounded-xl transition-all duration-300;
+        
+        @apply bg-surface-l/50 dark:bg-surface-l/10 backdrop-blur-md border-0;
+        
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px);
+        
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 
+                    0 8px 10px -6px rgba(0, 0, 0, 0.4) !important;
+
     }
 }
