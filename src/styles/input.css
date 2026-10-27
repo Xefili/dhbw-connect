@@ -30,6 +30,9 @@
 
     --color-text-accent-d: var(--color-orange-400);
     --color-text-accent-l: var(--color-orange-700);
+
+    --color-border-d: white;
+    --color-border-l: black;
 }
 
 
