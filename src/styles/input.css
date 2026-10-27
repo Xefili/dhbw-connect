@@ -66,6 +66,7 @@
 
     .background {
         @apply bg-linear-120 dark:from-[#1e3a8a] dark:via-[#581c87] dark:to-[#1e3a8a] from-[#93c5fd] via-[#c084fc] to-[#93c5fd];
+        background-attachment: fixed;
 
         @apply text-text-bg-l dark:text-text-bg-d;
         

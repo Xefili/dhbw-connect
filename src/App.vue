@@ -10,7 +10,6 @@ const route = useRoute();
   <div id="app">
     <main>
       <Header />
-      <div class="block w-0 h-12"></div>
       <RouterView></RouterView>
       <Footer v-if="route.meta.footerEnabled" />
     </main>
