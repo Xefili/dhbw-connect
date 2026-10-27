@@ -5,7 +5,7 @@ import CanteenTable from '@/components/CanteenTable.vue';
 
 <template class="bg-background-l dark:bg-background-d text-text-bg-l dark:text-text-bg-d flex flex-col items-center">
     <div class="flex w-full justify-center mt-8">
-        <main class="w-full flex flex-col lg:grid lg:gap-8 lg:grid-cols-2">
+        <main class="w-full flex flex-col lg:grid gap-8 m-2 lg:m-0 lg:grid-cols-2">
             <div class="card">
                 <h1>DHBW-Connect</h1>
                 <section>
@@ -32,7 +32,7 @@ import CanteenTable from '@/components/CanteenTable.vue';
             <div class="card" id="planSkip">
                 <a href="#moodleSkip" class="opacity-0 focus:opacity-100">Studenplan überspringen?</a>
                 <h2>Stundenplan</h2>
-                <iframe src="https://dhbw.app/c/KA-TINF25B3" frameborder="0" class="w-full min-h-250 mt-8 rounded-xl"></iframe>
+                <iframe src="https://dhbw.app/c/KA-TINF25B3" frameborder="0" class="w-full lg:min-h-250 min-h-100 mt-8 rounded-xl"></iframe>
             </div>
 
             <div class="card">
