@@ -53,8 +53,9 @@
     .card {
         @apply p-5 rounded-2xl transition-all duration-300;
         
-        @apply bg-surface-l/50 dark:bg-surface-l/10 backdrop-blur-md border border-border-l/40 dark:border-border-d/40;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        @apply bg-surface-l/50 dark:bg-surface-l/10 backdrop-blur-md border-0;
+        
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
     }
     .card-floating {
         @apply bg-s-surface-l dark:bg-s-surface-d text-text-ss-l dark:text-text-ss-d p-4 rounded-lg;
