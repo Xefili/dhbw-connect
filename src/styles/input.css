@@ -4,28 +4,32 @@
 
 @theme {
     /* Backgrounds */
-    --color-background-d: oklch(20% 0.012 215);
-    --color-background-l: oklch(97% 0.003 200);
+    --color-background-d: oklch(18.3% 0.141 291.089);
+    --color-background-l: oklch(96.9% 0.016 293.756);
 
     /* Surfaces (Cards, Modals) */
-    --color-surface-d: oklch(25% 0.035 195);
-    --color-surface-l: oklch(100% 0 0);
+    --color-surface-d: oklch(28.3% 0.141 291.089);
+    --color-surface-l: oklch(93% 0.034 272.788);
 
     /* Secondary Surfaces / Elevated Elements */
-    --color-s-surface-d: oklch(32% 0.050 195);
-    --color-s-surface-l: oklch(93% 0.015 200);
+    --color-s-surface-d: oklch(18.3% 0.141 291.089);
+    --color-s-surface-l: oklch(89.4% 0.057 293.283);
 
     /* Text on Background */
-    --color-text-bg-d: oklch(95% 0.005 200);
-    --color-text-bg-l: oklch(20% 0.012 215);
+    --color-text-bg-d: var(--color-background-l);
+    --color-text-bg-l: var(--color-background-d);
 
     /* Text on Surface */
-    --color-text-s-d: oklch(92% 0.010 195);
-    --color-text-s-l: oklch(25% 0.035 195);
+    --color-text-s-d: var(--color-surface-l);
+    --color-text-s-l: var(--color-surface-d);
 
     /* Text on Secondary Surface / Accents */
-    --color-text-ss-d: oklch(85% 0.020 195);
-    --color-text-ss-l: oklch(35% 0.040 195);
+    --color-text-ss-d: var(--color-s-surface-l);
+    --color-text-ss-l: var(--color-s-surface-d);
+
+
+    --color-text-accent-d: var(--color-orange-400);
+    --color-text-accent-l: var(--color-orange-700);
 }
 
 

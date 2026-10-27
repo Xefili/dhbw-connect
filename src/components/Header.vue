@@ -3,8 +3,8 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-    <header class="w-full">
-        <nav class="w-full grid grid-cols-2 bg-surface-l dark:bg-surface-d text-text-s-l dark:text-text-s-d p-4">
+    <header class="w-full fixed top-0">
+        <nav class="w-full grid grid-cols-2 bg-surface-l/50 dark:bg-surface-d/50 backdrop-blur-xl text-text-s-l dark:text-text-s-d p-4">
             <div class="flex flex-row justify-start items-center gap-4">
                 <img src="/logo.svg" alt="Logo" class="h-4 w-4">
                 <span class="">DHBW-Connect</span>
