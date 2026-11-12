@@ -5,7 +5,8 @@ const ENDPOINT = 'https://mensa.xefili.app/events'
 const TIME_ZONE = 'Europe/Berlin'
 const DAY_START = 6
 const DAY_END = 20
-const DAYS_IN_WEEK = 5
+const DAYS_DISPLAYED = 5
+const DAYS_PER_WEEK = 7
 
 const events = ref([])
 const loaded = ref(false)
@@ -67,10 +68,10 @@ const todayKey = getDateKey(new Date())
 const today = new Date(`${todayKey}T12:00:00Z`)
 const mondayOffset = (today.getUTCDay() + 6) % 7
 const currentMondayKey = addDays(todayKey, -mondayOffset)
-const mondayKey = computed(() => addDays(currentMondayKey, weekOffset.value * DAYS_IN_WEEK))
+const mondayKey = computed(() => addDays(currentMondayKey, weekOffset.value * DAYS_PER_WEEK))
 
 const weekDays = computed(() =>
-  Array.from({ length: DAYS_IN_WEEK }, (_, index) => {
+  Array.from({ length: DAYS_DISPLAYED }, (_, index) => {
     const key = addDays(mondayKey.value, index)
     return {
       key,
@@ -97,7 +98,7 @@ const displayedDayEvents = computed(() =>
 const hourLabels = Array.from({ length: DAY_END - DAY_START }, (_, index) => DAY_START + index)
 
 const weekRange = computed(() => {
-  const endKey = addDays(mondayKey.value, DAYS_IN_WEEK - 1)
+  const endKey = addDays(mondayKey.value, DAYS_DISPLAYED - 1)
   const start = new Date(`${mondayKey.value}T12:00:00Z`)
   const end = new Date(`${endKey}T12:00:00Z`)
   const rangeFormatter = new Intl.DateTimeFormat('de-DE', {
