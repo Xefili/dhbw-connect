@@ -10,6 +10,7 @@ const DAYS_IN_WEEK = 5
 const events = ref([])
 const loaded = ref(false)
 const error = ref(false)
+const weekOffset = ref(0)
 
 const dateFormatter = new Intl.DateTimeFormat('de-DE', {
   timeZone: TIME_ZONE,
@@ -65,11 +66,12 @@ function formatTime(dateString) {
 const todayKey = getDateKey(new Date())
 const today = new Date(`${todayKey}T12:00:00Z`)
 const mondayOffset = (today.getUTCDay() + 6) % 7
-const mondayKey = addDays(todayKey, -mondayOffset)
+const currentMondayKey = addDays(todayKey, -mondayOffset)
+const mondayKey = computed(() => addDays(currentMondayKey, weekOffset.value * DAYS_IN_WEEK))
 
 const weekDays = computed(() =>
   Array.from({ length: DAYS_IN_WEEK }, (_, index) => {
-    const key = addDays(mondayKey, index)
+    const key = addDays(mondayKey.value, index)
     return {
       key,
       label: dayFormatter.format(new Date(`${key}T12:00:00Z`)),
@@ -87,11 +89,16 @@ const todayEvents = computed(() =>
   sortedEvents.value.filter((event) => eventDateKey(event) === todayKey)
 )
 
+const displayedDayKey = computed(() => addDays(mondayKey.value, mondayOffset))
+const displayedDayEvents = computed(() =>
+  sortedEvents.value.filter((event) => eventDateKey(event) === displayedDayKey.value)
+)
+
 const hourLabels = Array.from({ length: DAY_END - DAY_START }, (_, index) => DAY_START + index)
 
 const weekRange = computed(() => {
-  const endKey = addDays(mondayKey, DAYS_IN_WEEK - 1)
-  const start = new Date(`${mondayKey}T12:00:00Z`)
+  const endKey = addDays(mondayKey.value, DAYS_IN_WEEK - 1)
+  const start = new Date(`${mondayKey.value}T12:00:00Z`)
   const end = new Date(`${endKey}T12:00:00Z`)
   const rangeFormatter = new Intl.DateTimeFormat('de-DE', {
     timeZone: TIME_ZONE,
@@ -139,7 +146,28 @@ onMounted(fetchEvents)
 
 <template>
   <section>
-    <h2>Stundenplan</h2>
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <h2>Stundenplan</h2>
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          class="nav-btn text-text-s-l dark:text-text-s-d"
+          aria-label="Vorherige Woche"
+          @click="weekOffset--"
+        >
+          &larr;
+        </button>
+        <h3 class="text-sm font-semibold text-text-s-l dark:text-text-s-d">{{ weekRange }}</h3>
+        <button
+          type="button"
+          class="nav-btn text-text-s-l dark:text-text-s-d"
+          aria-label="Nächste Woche"
+          @click="weekOffset++"
+        >
+          &rarr;
+        </button>
+      </div>
+    </div>
 
     <div v-if="!loaded" class="mt-4 grid gap-2" role="status" aria-live="polite">
       <div
@@ -154,16 +182,14 @@ onMounted(fetchEvents)
     </p>
 
     <template v-else>
-      <h3 class="my-4 hidden text-text-s-l dark:text-text-s-d lg:block">{{ weekRange }}</h3>
-
       <div class="lg:hidden">
         <h3 class="my-4 font-semibold">
-          {{ dayFormatter.format(new Date(`${todayKey}T12:00:00Z`)) }}
+          {{ dayFormatter.format(new Date(`${displayedDayKey}T12:00:00Z`)) }}
         </h3>
 
-        <ul v-if="todayEvents.length" class="space-y-3">
+        <ul v-if="displayedDayEvents.length" class="space-y-3">
           <li
-            v-for="event in todayEvents"
+            v-for="event in displayedDayEvents"
             :key="event.id"
             class="card-floating border-l-4 border-text-accent-l p-4 dark:border-text-accent-d"
             :class="{ 'opacity-60': event.cancelled }"
@@ -182,7 +208,7 @@ onMounted(fetchEvents)
             </div>
           </li>
         </ul>
-        <p v-else class="card-floating p-4">Heute finden keine Vorlesungen statt.</p>
+        <p v-else class="card-floating p-4">An diesem Tag finden keine Vorlesungen statt.</p>
       </div>
 
       <div class="hidden overflow-x-auto lg:block">
