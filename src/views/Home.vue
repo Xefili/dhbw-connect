@@ -13,20 +13,20 @@ import TimeTable from '@/components/TimeTable.vue';
                     Willkommen bei DHBW-Connect! Diese Seite ist noch in der Entwicklungsphase.
                 </section>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-4 mt-4 big-card">
-                    <div class="card-floating">
+                    <a class="card-floating block no-underline" href="https://moodle.dhbw.de/" target="_blank" rel="noopener noreferrer">
                         <h2>Moodle</h2>
-                        <a href="https://moodle.dhbw.de/" target="_blank" rel="noopener noreferrer">Moodle in einem neuen Fenster öffnen</a>
-                    </div>
+                        <span>Moodle in einem neuen Fenster öffnen</span>
+                    </a>
 
-                    <div class="card-floating">
+                    <a class="card-floating block no-underline" href="https://dualis.dhbw.de/" target="_blank" rel="noopener noreferrer">
                         <h2>Dualis</h2>
-                        <a href="https://dualis.dhbw.de/" target="_blank" rel="noopener noreferrer">Dualis in einem neuen Fenster öffnen</a>
-                    </div>
+                        <span>Dualis in einem neuen Fenster öffnen</span>
+                    </a>
 
-                    <div class="card-floating">
+                    <a class="card-floating block no-underline" href="https://dhbw.de/" target="_blank" rel="noopener noreferrer">
                         <h2>DHBW Webseite</h2>
-                        <a href="https://dhbw.de/" target="_blank" rel="noopener noreferrer">DHBW Seite in einem neuen Fenster öffnen</a>
-                    </div>
+                        <span>DHBW Seite in einem neuen Fenster öffnen</span>
+                    </a>
                 </div>
             </div>
             <div class="card">
