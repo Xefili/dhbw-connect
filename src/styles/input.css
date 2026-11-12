@@ -64,6 +64,10 @@
                     0 8px 10px -6px rgba(0, 0, 0, 0.4) !important;
     }
 
+    .event {
+        @apply overflow-hidden rounded-lg border-l-4 border-text-accent-l bg-s-surface-l/90 shadow-md backdrop-blur-md dark:border-text-accent-d dark:bg-s-surface-d/90;
+    }
+
     .background {
         @apply bg-linear-120 dark:from-[#1e3a8a] dark:via-[#581c87] dark:to-[#1e3a8a] from-[#93c5fd] via-[#c084fc] to-[#93c5fd];
         background-attachment: fixed;
