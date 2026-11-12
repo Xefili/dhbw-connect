@@ -1,87 +1,95 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-// 1. Erstelle eine reaktive Ref für canteen
 const canteen = ref(null)
 const loaded = ref(false)
 
+const studentPriceFormatter = new Intl.NumberFormat('de-DE', {
+  style: 'currency',
+  currency: 'EUR'
+})
 
 async function fetchDhbwTodayMenu() {
-  const ENDPOINT = `https://api.dhbw.app/mensa/KA/`
+  const ENDPOINT = `https://mensa.xefili.app/today/`
 
   try {
     const response = await fetch(ENDPOINT, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' }
+      method: 'GET'
     })
 
-    canteen.value  = await response.json();
-    loaded.value = true;
-
+    canteen.value = await response.json()
+    loaded.value = true
   } catch (err) {
-    console.info("API dead :(");
+    console.info('Could not load the canteen menu:', err)
   }
 }
 
-// 3. Beim Laden der Komponente ausführen
+function formatStudentPrice(price) {
+  if (!price || price.student === 0) {
+    return 'Inklusiv'
+  }
+
+  return studentPriceFormatter.format(price.student / 100)
+}
+
 onMounted(() => {
-  fetchDhbwTodayMenu();
+  fetchDhbwTodayMenu()
 })
 </script>
 
 <template>
-  <div v-if="loaded">
-    <div class="canteen-menu">
+  <div v-if="loaded && canteen">
+    <div class="canteen-menu card-floating">
       <h2>Mensaplan</h2>
 
-      <table class="w-full text-left border-collapse">
+      <table class="my-2 w-full text-left border-collapse">
         <caption>
-          Mensa Erzbergerstraße
+          {{ canteen.canteen || 'Mensa Erzbergerstraße' }}
         </caption>
 
-        <thead class="bg-s-surface-l dark:bg-s-surface-d">
+        <thead class="">
           <tr>
-            <th scope="col" class="p-2">Variante</th>
-            <th scope="col" class="p-2">Essensbeschreibung</th>
-            <th scope="col" class="price-col p-2">Preis</th>
+            <th scope="col" class="border-border-l border-b-2 p-3 dark:border-border-d">Variante</th>
+            <th scope="col" class="border-border-l border-b-2 p-3 dark:border-border-d">
+              Essensbeschreibung
+            </th>
+            <th scope="col" class="price-col border-border-l border-b-2 p-3 dark:border-border-d">
+              Preis
+            </th>
           </tr>
         </thead>
 
         <tbody class="p-2">
-          <div v-for="line in canteen.lines" :key="line.name">
-            <!-- When meals are available for this line -->
-            <div v-if="line.meals && line.meals.length > 0">
-              <tr class="my-4" v-for="(meal, index) in line.meals" :key="index">
-                <!-- Show line name only on the first row of each group using rowSpan -->
-                <th 
-                  v-if="index === 0" 
-                  :rowspan="line.meals.length" 
-                  scope="rowgroup" 
-                  class="line-header"
+          <template v-for="line in canteen.lines" :key="line.id">
+            <template v-if="line.meals?.length">
+              <tr
+                v-for="(meal, index) in line.meals"
+                :key="meal.id"
+                class="border-border-l border-b dark:border-border-d"
+              >
+                <th
+                  v-if="index === 0"
+                  :rowspan="line.meals.length"
+                  scope="rowgroup"
+                  class="line-header p-3"
                 >
                   {{ line.name }}
                 </th>
-                
-                <td>{{ meal.name }}</td>
-                
-                <td class="price-col">
-                  {{ meal.price || 'Inklusiv' }}
+
+                <td class="p-3">{{ meal.name }}</td>
+
+                <td class="price-col p-3">
+                  {{ formatStudentPrice(meal.price) }}
                 </td>
               </tr>
-            </div>
-
-            <!-- Fallback when line has no meals (e.g. Wahlessen 3) -->
-            <tr v-else class="empty-line">
-              <th scope="row" class="line-header">{{ line.name }}</th>
-              <td colspan="2" class="no-meals">Keine Daten vorhanden</td>
-            </tr>
-          </div>
+            </template>
+          </template>
         </tbody>
       </table>
     </div>
   </div>
 
-  <div v-else>
+  <div v-else-if="!loaded">
     <div role="status" aria-live="polite" aria-label="Loader. Please wait for this content.">
       <h2 class="mb-4">Mensaplan</h2>
 

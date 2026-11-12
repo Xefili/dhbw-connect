@@ -1,5 +1,6 @@
 <script setup>
 import CanteenTable from '@/components/CanteenTable.vue';
+import TimeTable from '@/components/TimeTable.vue';
 
 </script>
 
@@ -28,17 +29,14 @@ import CanteenTable from '@/components/CanteenTable.vue';
                     </div>
                 </div>
             </div>
-
-            <div class="card" id="planSkip">
-                <a href="#moodleSkip" class="opacity-0 focus:opacity-100">Studenplan überspringen?</a>
-                <h2>Stundenplan</h2>
-                <iframe src="https://dhbw.app/c/KA-TINF25B3" frameborder="0" class="w-full lg:min-h-250 min-h-100 mt-8 rounded-xl"></iframe>
-            </div>
-
             <div class="card">
                 <Suspense>
                     <CanteenTable />
                 </Suspense>
+            </div>
+            
+            <div class="card lg:col-span-2" id="planSkip">
+                <TimeTable />
             </div>
         </main>
     </div>
