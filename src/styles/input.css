@@ -102,6 +102,22 @@
 
     }
 
+    .date-navigation-header {
+        @apply flex flex-wrap items-center justify-between gap-3;
+    }
+
+    .date-navigation {
+        @apply flex items-center gap-2;
+    }
+
+    .date-navigation h3 {
+        @apply text-sm font-semibold text-text-s-l dark:text-text-s-d;
+    }
+
+    .date-navigation .nav-btn {
+        @apply text-text-s-l dark:text-text-s-d;
+    }
+
     .footer {
         @apply w-max flex flex-row items-center justify-center gap-2 mx-auto mt-12 mb-6 p-3 rounded-xl transition-all duration-300;
         

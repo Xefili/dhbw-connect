@@ -147,21 +147,21 @@ onMounted(fetchEvents)
 
 <template>
   <section>
-    <div class="flex flex-wrap items-center justify-between gap-3">
+    <div class="date-navigation-header">
       <h2>Stundenplan</h2>
-      <div class="flex items-center gap-2">
+      <div class="date-navigation">
         <button
           type="button"
-          class="nav-btn text-text-s-l dark:text-text-s-d"
+          class="nav-btn"
           aria-label="Vorherige Woche"
           @click="weekOffset--"
         >
           &larr;
         </button>
-        <h3 class="text-sm font-semibold text-text-s-l dark:text-text-s-d">{{ weekRange }}</h3>
+        <h3>{{ weekRange }}</h3>
         <button
           type="button"
-          class="nav-btn text-text-s-l dark:text-text-s-d"
+          class="nav-btn"
           aria-label="Nächste Woche"
           @click="weekOffset++"
         >
