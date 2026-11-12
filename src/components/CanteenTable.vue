@@ -39,7 +39,7 @@ onMounted(() => {
 
 <template>
   <div v-if="loaded && canteen">
-    <div class="canteen-menu card-floating">
+    <div class="canteen-menu">
       <h2>Mensaplan</h2>
 
       <table class="my-2 w-full text-left border-collapse">
