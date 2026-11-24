@@ -13,6 +13,7 @@ export const THEMES = [
   { id: 'standard', label: 'Standard' },
   { id: 'alt', label: 'Neon Sunset' },
   { id: 'leibniz', label: 'Leibniz-Keks' },
+  { id: 'cocoa', label: 'Schoko-Keks' },
 ]
 
 const DEFAULT_THEME = 'standard'

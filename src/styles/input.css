@@ -114,6 +114,59 @@
     background-color: oklch(97% 0.02 90 / 65%);
 }
 
+/*
+ * Schoko-Keks theme: a dark cocoa palette with cream text, like a dark
+ * chocolate sandwich biscuit. Same token-pair approach as the other themes.
+ */
+:root[data-theme="cocoa"] {
+    --color-background-d: oklch(19% 0.02 60);
+    --color-background-l: oklch(19% 0.02 60);
+
+    --color-surface-d: oklch(27% 0.03 60);
+    --color-surface-l: oklch(27% 0.03 60);
+
+    --color-s-surface-d: oklch(23% 0.025 60);
+    --color-s-surface-l: oklch(23% 0.025 60);
+
+    --color-text-bg-d: oklch(95% 0.02 90);
+    --color-text-bg-l: oklch(95% 0.02 90);
+
+    --color-text-s-d: oklch(95% 0.02 90);
+    --color-text-s-l: oklch(95% 0.02 90);
+
+    --color-text-ss-d: oklch(86% 0.03 85);
+    --color-text-ss-l: oklch(86% 0.03 85);
+
+    --color-text-accent-d: oklch(90% 0.05 90);
+    --color-text-accent-l: oklch(90% 0.05 90);
+
+    --color-border-d: oklch(48% 0.03 70);
+    --color-border-l: oklch(48% 0.03 70);
+}
+
+/*
+ * Two dark chocolate wafers with a cream filling band through the middle.
+ * The band is a hard-edged stripe, so it reads as a sandwich layer.
+ */
+:root[data-theme="cocoa"].background {
+    background-image: linear-gradient(
+        180deg,
+        #3d2b1f 0%,
+        #2a1d15 30%,
+        #f3e6d0 32%,
+        #f3e6d0 68%,
+        #2a1d15 70%,
+        #140e0a 100%
+    );
+}
+
+:root[data-theme="cocoa"] .header,
+:root[data-theme="cocoa"] .card,
+:root[data-theme="cocoa"] .card-floating,
+:root[data-theme="cocoa"] .footer {
+    background-color: oklch(27% 0.03 60 / 85%);
+}
+
 @layer utilities {
     h1 {
         @apply text-3xl;
