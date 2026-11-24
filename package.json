@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "ka-mensa-fetch": "^5.0.1",
+    "three": "^0.180.0",
     "vue": "^3.5.42",
     "vue-router": "^5.3.1"
   },
