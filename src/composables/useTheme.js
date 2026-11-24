@@ -1,23 +1,29 @@
 import { computed, ref, watch } from 'vue'
 
 /**
- * Theme state shared across the app.
- * - "standard": the default palette (follows the OS light/dark setting)
- * - "alt":      the alternative palette, defined in styles/input.css
+ * Theme state shared across the app. Each theme id is written to `data-theme`
+ * on <html>; the palettes live in styles/input.css under matching selectors.
  *
- * The active theme is written to `data-theme` on <html>. index.html sets it
- * before first paint using the same storage key, so keep them in sync.
+ * index.html applies the saved theme before first paint and must know the same
+ * ids and storage key, so keep them in sync.
  */
 export const THEME_STORAGE_KEY = 'dhbw-connect-theme'
-const THEMES = ['standard', 'alt']
+
+export const THEMES = [
+  { id: 'standard', label: 'Standard' },
+  { id: 'alt', label: 'Neon Sunset' },
+  { id: 'leibniz', label: 'Leibniz-Keks' },
+]
+
+const DEFAULT_THEME = 'standard'
 
 function readStoredTheme() {
   try {
     const stored = localStorage.getItem(THEME_STORAGE_KEY)
-    return THEMES.includes(stored) ? stored : 'standard'
+    return THEMES.some((t) => t.id === stored) ? stored : DEFAULT_THEME
   } catch {
     // Storage can be blocked (private mode, disabled site data).
-    return 'standard'
+    return DEFAULT_THEME
   }
 }
 
@@ -41,11 +47,13 @@ watch(
 )
 
 export function useTheme() {
-  const isAlt = computed(() => theme.value === 'alt')
+  const currentLabel = computed(
+    () => THEMES.find((t) => t.id === theme.value)?.label ?? '',
+  )
 
-  function toggleTheme() {
-    theme.value = isAlt.value ? 'standard' : 'alt'
+  function setTheme(id) {
+    if (THEMES.some((t) => t.id === id)) theme.value = id
   }
 
-  return { theme, isAlt, toggleTheme }
+  return { theme, themes: THEMES, currentLabel, setTheme }
 }

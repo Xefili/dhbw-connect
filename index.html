@@ -7,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DHBW-Connect</title>
     <script>
-      // Apply the saved theme before first paint (key must match THEME_STORAGE_KEY in src/composables/useTheme.js).
-      try {
-        document.documentElement.dataset.theme =
-          localStorage.getItem('dhbw-connect-theme') === 'alt' ? 'alt' : 'standard';
-      } catch (e) {
-        document.documentElement.dataset.theme = 'standard';
-      }
+      // Apply the saved theme before first paint. Key and theme ids must match src/composables/useTheme.js.
+      (function () {
+        var themes = ['standard', 'alt', 'leibniz'];
+        var theme = 'standard';
+        try {
+          var stored = localStorage.getItem('dhbw-connect-theme');
+          if (themes.indexOf(stored) !== -1) theme = stored;
+        } catch (e) {}
+        document.documentElement.dataset.theme = theme;
+      })();
     </script>
   </head>
   <body class="text-text-bg-l dark:text-text-bg-d">
