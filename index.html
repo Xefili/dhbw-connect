@@ -6,6 +6,15 @@
     <link rel="shortcut icon" href="/logo.svg" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DHBW-Connect</title>
+    <script>
+      // Apply the saved theme before first paint (key must match THEME_STORAGE_KEY in src/composables/useTheme.js).
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem('dhbw-connect-theme') === 'alt' ? 'alt' : 'standard';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'standard';
+      }
+    </script>
   </head>
   <body class="text-text-bg-l dark:text-text-bg-d">
     <div id="app"></div>

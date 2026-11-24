@@ -29,6 +29,49 @@
     --color-border-l: oklch(55%, 0, 0);
 }
 
+/*
+ * Alternative theme ("alt"), selected with the theme switcher in the top bar.
+ * Both the -l and -d token pairs get the same values, so the palette looks the
+ * same whatever the OS light/dark setting is.
+ */
+:root[data-theme="alt"] {
+    --color-background-d: oklch(19% 0.08 290);
+    --color-background-l: oklch(19% 0.08 290);
+
+    --color-surface-d: oklch(27% 0.1 320);
+    --color-surface-l: oklch(27% 0.1 320);
+
+    --color-s-surface-d: oklch(22% 0.09 300);
+    --color-s-surface-l: oklch(22% 0.09 300);
+
+    --color-text-bg-d: oklch(97% 0.015 350);
+    --color-text-bg-l: oklch(97% 0.015 350);
+
+    --color-text-s-d: oklch(97% 0.015 350);
+    --color-text-s-l: oklch(97% 0.015 350);
+
+    --color-text-ss-d: oklch(88% 0.05 340);
+    --color-text-ss-l: oklch(88% 0.05 340);
+
+    --color-text-accent-d: oklch(74% 0.19 350);
+    --color-text-accent-l: oklch(74% 0.19 350);
+
+    --color-border-d: oklch(72% 0.13 200);
+    --color-border-l: oklch(72% 0.13 200);
+}
+
+/* Sunset gradient: night blue, magenta, then orange. */
+:root[data-theme="alt"].background {
+    background-image: linear-gradient(160deg, #2563eb 0%, #7c3aed 30%, #db2777 62%, #f97316 100%);
+}
+
+:root[data-theme="alt"] .header,
+:root[data-theme="alt"] .card,
+:root[data-theme="alt"] .card-floating,
+:root[data-theme="alt"] .footer {
+    background-color: oklch(22% 0.1 320 / 55%);
+}
+
 @layer utilities {
     h1 {
         @apply text-3xl;
