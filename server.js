@@ -7,7 +7,6 @@ const GRAPHQL_ENDPOINT = 'https://api.mensa-ka.de/';
 const TIMETABLE_ENDPOINT = 'https://api.dhbw.app/rapla/lectures/KA-TINF25B3/events';
 const ERZBERGER_UUID = '0a53351a-62f8-4ac4-a860-099817e5cf91';
 
-// Enable CORS for all origins and handle OPTIONS preflight requests
 app.use(cors());
 app.use(express.json());
 
@@ -30,7 +29,6 @@ app.get('/events', async (req, res) => {
   }
 });
 
-// Simple in-memory cache (10 minutes)
 let cache = { date: null, timestamp: 0, payload: null };
 const CACHE_TTL_MS = 10 * 60 * 1000;
 
@@ -58,12 +56,10 @@ async function fetchGraphQL(query, variables = {}) {
 
 app.get('/today', async (req, res) => {
   try {
-    // Today's date in Karlsruhe (YYYY-MM-DD)
     const today = new Date().toLocaleDateString('en-CA', {
       timeZone: 'Europe/Berlin',
     });
 
-    // Serve from cache if fresh and still the same day
     if (
       cache.payload &&
       cache.date === today &&
@@ -148,7 +144,6 @@ app.get('/today', async (req, res) => {
   }
 });
 
-// Optional: Direct GraphQL proxy with CORS headers if you ever want custom queries
 app.post('/graphql', async (req, res) => {
   try {
     const data = await fetchGraphQL(req.body.query, req.body.variables);
