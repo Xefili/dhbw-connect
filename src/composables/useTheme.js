@@ -14,6 +14,10 @@ export const THEMES = [
   { id: 'alt', label: 'Neon Sunset' },
   { id: 'leibniz', label: 'Leibniz-Keks' },
   { id: 'cocoa', label: 'Schoko-Keks' },
+  { id: 'cake', label: 'Erdbeertorte' },
+  { id: 'terminal', label: 'Terminal' },
+  { id: 'oled', label: 'OLED' },
+  { id: 'blocky', label: 'Blockwelt' },
 ]
 
 const DEFAULT_THEME = 'standard'

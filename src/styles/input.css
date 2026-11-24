@@ -167,6 +167,196 @@
     background-color: oklch(27% 0.03 60 / 85%);
 }
 
+/*
+ * Erdbeertorte theme: a light strawberry cream cake. Sponge-cream top,
+ * frosting-pink bottom, berry-brown text and strawberry-red accents.
+ */
+:root[data-theme="cake"] {
+    --color-background-d: oklch(96% 0.02 70);
+    --color-background-l: oklch(96% 0.02 70);
+
+    --color-surface-d: oklch(99% 0.01 80);
+    --color-surface-l: oklch(99% 0.01 80);
+
+    --color-s-surface-d: oklch(95% 0.03 20);
+    --color-s-surface-l: oklch(95% 0.03 20);
+
+    --color-text-bg-d: oklch(32% 0.07 15);
+    --color-text-bg-l: oklch(32% 0.07 15);
+
+    --color-text-s-d: oklch(32% 0.07 15);
+    --color-text-s-l: oklch(32% 0.07 15);
+
+    --color-text-ss-d: oklch(40% 0.09 15);
+    --color-text-ss-l: oklch(40% 0.09 15);
+
+    --color-text-accent-d: oklch(52% 0.2 20);
+    --color-text-accent-l: oklch(52% 0.2 20);
+
+    --color-border-d: oklch(78% 0.07 20);
+    --color-border-l: oklch(78% 0.07 20);
+}
+
+:root[data-theme="cake"].background {
+    background-image: linear-gradient(160deg, #fff7ec 0%, #ffe9d6 40%, #ffc9dc 100%);
+}
+
+:root[data-theme="cake"] .header,
+:root[data-theme="cake"] .card,
+:root[data-theme="cake"] .card-floating,
+:root[data-theme="cake"] .footer {
+    background-color: oklch(99% 0.01 80 / 70%);
+}
+
+/*
+ * Terminal theme: phosphor green on near-black, monospace font, faint scanlines.
+ */
+:root[data-theme="terminal"] {
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+
+    --color-background-d: oklch(14% 0.03 150);
+    --color-background-l: oklch(14% 0.03 150);
+
+    --color-surface-d: oklch(20% 0.04 150);
+    --color-surface-l: oklch(20% 0.04 150);
+
+    --color-s-surface-d: oklch(17% 0.035 150);
+    --color-s-surface-l: oklch(17% 0.035 150);
+
+    --color-text-bg-d: oklch(92% 0.01 90);
+    --color-text-bg-l: oklch(92% 0.01 90);
+
+    --color-text-s-d: oklch(92% 0.01 90);
+    --color-text-s-l: oklch(92% 0.01 90);
+
+    --color-text-ss-d: oklch(78% 0.01 90);
+    --color-text-ss-l: oklch(78% 0.01 90);
+
+    --color-text-accent-d: oklch(84% 0.16 75);
+    --color-text-accent-l: oklch(84% 0.16 75);
+
+    --color-border-d: oklch(42% 0.01 150);
+    --color-border-l: oklch(42% 0.01 150);
+}
+
+:root[data-theme="terminal"].background {
+    background-color: #0b110b;
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.25) 0 1px,
+        transparent 1px 3px
+    );
+}
+
+/* Colored headings: green h1, cyan h2, amber h3. */
+:root[data-theme="terminal"] h1 {
+    color: oklch(90% 0.22 145);
+}
+:root[data-theme="terminal"] h2 {
+    color: oklch(82% 0.12 205);
+}
+:root[data-theme="terminal"] h3 {
+    color: oklch(84% 0.16 75);
+}
+
+:root[data-theme="terminal"] .header,
+:root[data-theme="terminal"] .card,
+:root[data-theme="terminal"] .card-floating,
+:root[data-theme="terminal"] .footer {
+    background-color: oklch(12% 0.03 150 / 75%);
+}
+
+/*
+ * OLED theme: pure black background for power-saving OLED screens,
+ * with near-white text and a single restrained accent.
+ */
+:root[data-theme="oled"] {
+    --color-background-d: #000000;
+    --color-background-l: #000000;
+
+    --color-surface-d: #0c0c0c;
+    --color-surface-l: #0c0c0c;
+
+    --color-s-surface-d: #080808;
+    --color-s-surface-l: #080808;
+
+    --color-text-bg-d: #f5f5f5;
+    --color-text-bg-l: #f5f5f5;
+
+    --color-text-s-d: #f5f5f5;
+    --color-text-s-l: #f5f5f5;
+
+    --color-text-ss-d: #bdbdbd;
+    --color-text-ss-l: #bdbdbd;
+
+    --color-text-accent-d: #7dd3fc;
+    --color-text-accent-l: #7dd3fc;
+
+    --color-border-d: #3a3a3a;
+    --color-border-l: #3a3a3a;
+}
+
+:root[data-theme="oled"].background {
+    background-color: #000000;
+    background-image: none;
+}
+
+:root[data-theme="oled"] .header,
+:root[data-theme="oled"] .card,
+:root[data-theme="oled"] .card-floating,
+:root[data-theme="oled"] .footer {
+    background-color: rgba(12, 12, 12, 0.85);
+}
+
+/*
+ * Blockwelt theme: a blocky grass-and-dirt pixel grid with chunky dark outlines.
+ * Generic block-game styling, no third-party names, logos or textures.
+ */
+:root[data-theme="blocky"] {
+    font-family: "VT323", ui-monospace, monospace;
+    font-size: 1.15rem;
+
+    --color-background-d: oklch(40% 0.09 140);
+    --color-background-l: oklch(40% 0.09 140);
+
+    --color-surface-d: oklch(32% 0.05 60);
+    --color-surface-l: oklch(32% 0.05 60);
+
+    --color-s-surface-d: oklch(27% 0.045 60);
+    --color-s-surface-l: oklch(27% 0.045 60);
+
+    --color-text-bg-d: oklch(97% 0.01 90);
+    --color-text-bg-l: oklch(97% 0.01 90);
+
+    --color-text-s-d: oklch(97% 0.01 90);
+    --color-text-s-l: oklch(97% 0.01 90);
+
+    --color-text-ss-d: oklch(90% 0.02 90);
+    --color-text-ss-l: oklch(90% 0.02 90);
+
+    --color-text-accent-d: oklch(84% 0.18 130);
+    --color-text-accent-l: oklch(84% 0.18 130);
+
+    --color-border-d: oklch(18% 0.02 60);
+    --color-border-l: oklch(18% 0.02 60);
+}
+
+/* Grass and dirt in 32px blocks. */
+:root[data-theme="blocky"].background {
+    background-color: #4a7a2f;
+    background-image: repeating-conic-gradient(#4a7a2f 0% 25%, #3d6325 0% 50%);
+    background-size: 32px 32px;
+    background-attachment: scroll;
+}
+
+:root[data-theme="blocky"] .header,
+:root[data-theme="blocky"] .card,
+:root[data-theme="blocky"] .card-floating,
+:root[data-theme="blocky"] .footer {
+    background-color: rgba(70, 48, 30, 0.88);
+    border-color: #1a1008 !important;
+}
+
 @layer utilities {
     h1 {
         @apply text-3xl;
