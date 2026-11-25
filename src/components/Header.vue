@@ -5,6 +5,7 @@ import AppLink from './AppLink.vue'
 import ThemeSwitcher from './ThemeSwitcher.vue'
 import { NAV_ITEMS } from '@/data/links'
 
+const BASE_URL = import.meta.env.BASE_URL
 const isMenuOpen = ref(false)
 
 function closeMenu() {
@@ -18,7 +19,7 @@ function closeMenu() {
       class="w-full flex flex-wrap justify-between items-center p-4 text-text-s-l dark:text-text-s-d"
     >
       <div class="flex items-center gap-4">
-        <img src="/logo.svg" alt="Logo" class="h-7 w-7" />
+        <img :src="`${BASE_URL}logo.svg`" alt="Logo" class="h-7 w-7" />
         <span>DHBW-Connect</span>
       </div>
 

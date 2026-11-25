@@ -89,7 +89,7 @@ function startViewer(el) {
 
     const maxDim = Math.max(size.x, size.y, size.z) || 1
     const fov = THREE.MathUtils.degToRad(camera.fov)
-    const distance = ((maxDim / 2) / Math.tan(fov / 2)) * 1.4
+    const distance = (maxDim / 2 / Math.tan(fov / 2)) * 1.4
     camera.position.set(distance * 0.6, distance * 0.5, distance)
     camera.lookAt(0, 0, 0)
 
@@ -187,6 +187,8 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
-    <StatusMessage v-if="status === 'error'">Das 3D-Modell konnte nicht geladen werden.</StatusMessage>
+    <StatusMessage v-if="status === 'error'"
+      >Das 3D-Modell konnte nicht geladen werden.</StatusMessage
+    >
   </section>
 </template>

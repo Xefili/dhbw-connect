@@ -7,6 +7,7 @@ export const KVV_ENDPOINT = 'https://projekte.kvv-efa.de/sl3-alone/XSLT_DM_REQUE
 export const KVV_DEPARTURE_COUNT = 3 // per track
 export const KVV_FETCH_LIMIT = 12 // enough to fill every track
 export const TIMETABLE_ENDPOINT = 'https://mensa.xefili.app/events'
-export const DHBW_ADDRESS = 'Duale Hochschule Baden-Württemberg Karlsruhe, Erzbergerstraße 121, 76133 Karlsruhe'
+export const DHBW_ADDRESS =
+  'Duale Hochschule Baden-Württemberg Karlsruhe, Erzbergerstraße 121, 76133 Karlsruhe'
 export const GOOGLE_MAPS_DIRECTIONS_URL = 'https://www.google.com/maps/dir/'
 export const DB_URL = 'https://www.bahn.de/'

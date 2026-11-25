@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="DHBW Connect Startseite" />
-    <link rel="shortcut icon" href="/logo.svg" type="image/x-icon" />
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DHBW-Connect</title>
     <!-- VT323: free pixel font (SIL OFL), used by the Blockwelt theme only -->
@@ -11,9 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
     <script>
-      // Apply the saved theme before first paint. Key and theme ids must match src/composables/useTheme.js.
+      // Apply the saved theme before first paint. The theme ids are injected from src/themes.js by vite.config.js.
       (function () {
-        var themes = ['standard', 'alt', 'leibniz', 'cocoa', 'cake', 'terminal', 'oled', 'blocky'];
+        var themes = %THEME_IDS%;
         var theme = 'standard';
         try {
           var stored = localStorage.getItem('dhbw-connect-theme');
