@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import AppIcon from './AppIcon.vue'
 import AppLink from './AppLink.vue'
+import ThemeSwitcher from './ThemeSwitcher.vue'
 import { NAV_ITEMS } from '@/data/links'
 
 const isMenuOpen = ref(false)
@@ -35,6 +36,9 @@ function closeMenu() {
             <span>{{ item.label }}</span>
           </AppLink>
         </div>
+
+        <!-- Theme switcher: shown in both the desktop and mobile top bar -->
+        <ThemeSwitcher />
 
         <!-- Mobile menu toggle -->
         <!-- Wrapper hides the toggle: .nav-btn sets display itself, which would override md:hidden -->

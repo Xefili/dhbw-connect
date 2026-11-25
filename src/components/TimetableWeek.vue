@@ -50,7 +50,7 @@ function eventStyle(event) {
 
 <template>
   <div class="overflow-x-auto">
-    <div class="min-w-[700px]">
+    <div class="min-w-175">
       <div class="grid grid-cols-[3.5rem_repeat(5,minmax(0,1fr))]">
         <!-- Header row -->
         <div :class="['border-b p-2', LINE]"></div>

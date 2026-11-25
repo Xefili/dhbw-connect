@@ -1,5 +1,6 @@
 <script setup>
 import BaseCard from '@/components/BaseCard.vue'
+import CampusModel from '@/components/CampusModel.vue'
 import CanteenTable from '@/components/CanteenTable.vue'
 import DepartureBoard from '@/components/DepartureBoard.vue'
 import LinkCard from '@/components/LinkCard.vue'
@@ -31,6 +32,10 @@ import { SERVICE_LINKS } from '@/data/links'
 
       <BaseCard id="planSkip" class="lg:col-span-2">
         <TimeTable />
+      </BaseCard>
+
+      <BaseCard class="lg:col-span-2">
+        <CampusModel />
       </BaseCard>
     </div>
   </div>
